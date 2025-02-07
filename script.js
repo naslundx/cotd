@@ -1,16 +1,13 @@
 const infoBox = document.querySelector("#info");
 const map = L.map("map").setView([20, 0], 2);
 const modal = document.getElementById("myModal");
+const modalFlag = document.querySelector(".modal-content img");
 const modalContent = document.querySelector(".modal-content p");
 const span = document.getElementsByClassName("close")[0];
 
-const data = {
-  Sweden:
-    "Sweden is known for its stunning landscapes and progressive society.",
-  France:
-    "France is famous for its cuisine, culture, and landmarks like the Eiffel Tower.",
-  Japan: "Japan blends ancient traditions with modern technology.",
-};
+let data = {};
+let highlightedCountries = {};
+let unHighlightedCountries = [];
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
@@ -29,9 +26,6 @@ window.onclick = function (event) {
     hideModal();
   }
 };
-
-const highlightedCountries = new Set(Object.keys(data));
-let unHighlightedCountries = [];
 
 const getStyle = (country, hover = false) => {
   const hasCountry = highlightedCountries.has(country);
@@ -60,39 +54,44 @@ document.querySelector("#go").addEventListener("click", () => {
   alert(randomElement);
 });
 
-fetch(
-  "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json",
-)
+fetch("/data.json")
   .then((response) => response.json())
-  .then((worldData) => {
-    unHighlightedCountries = worldData.features
-      .map((feature) => feature.properties.name)
-      .filter((name) => !highlightedCountries.has(name));
+  .then((json) => (data = json))
+  .then(() => {
+    fetch("/world.json")
+      .then((response) => response.json())
+      .then((worldData) => {
+        highlightedCountries = new Set(Object.keys(data));
+        unHighlightedCountries = worldData.features
+          .map((feature) => feature.properties.name)
+          .filter((name) => !highlightedCountries.has(name));
 
-    L.geoJson(worldData, {
-      style: (feature) => getStyle(feature.properties.name),
-      onEachFeature: (feature, layer) => {
-        const countryName = feature.properties.name;
+        L.geoJson(worldData, {
+          style: (feature) => getStyle(feature.properties.name),
+          onEachFeature: (feature, layer) => {
+            const { name, iso_a2 } = feature.properties;
 
-        layer.on("mouseover", function () {
-          this.setStyle(getStyle(countryName, true));
-          infoBox.innerHTML = `<strong>${countryName}</strong>`;
-          infoBox.classList.remove("invisible");
-        });
+            layer.on("mouseover", function () {
+              this.setStyle(getStyle(name, true));
+              infoBox.innerHTML = `<strong>${name}</strong>`;
+              infoBox.classList.remove("invisible");
+            });
 
-        layer.on("mouseout", function () {
-          this.setStyle(getStyle(countryName));
-          infoBox.classList.add("invisible");
-        });
+            layer.on("mouseout", function () {
+              this.setStyle(getStyle(name));
+              infoBox.classList.add("invisible");
+            });
 
-        // Click event for displaying country-specific text
-        layer.on("click", function () {
-          if (data[countryName]) {
-            modalContent.innerText = data[countryName];
-            showModal();
-          }
-        });
-      },
-    }).addTo(map);
-  })
-  .catch((error) => console.error("Error loading data:", error));
+            // Click event for displaying country-specific text
+            layer.on("click", function () {
+              if (data[name]) {
+                modalContent.innerText = data[name];
+                modalFlag.src = `https://flagsapi.com/${iso_a2}/flat/64.png`;
+                showModal();
+              }
+            });
+          },
+        }).addTo(map);
+      })
+      .catch((error) => console.error("Error loading data:", error));
+  });
