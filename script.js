@@ -54,11 +54,11 @@ document.querySelector("#go").addEventListener("click", () => {
   alert(randomElement);
 });
 
-fetch("/data.json")
+fetch("data.json")
   .then((response) => response.json())
   .then((json) => (data = json))
   .then(() => {
-    fetch("/world.json")
+    fetch("world.json")
       .then((response) => response.json())
       .then((worldData) => {
         highlightedCountries = new Set(Object.keys(data));
