@@ -1,11 +1,82 @@
 {
-  "Uzbekistan": "Huvudstad: Tashkent\n  Cirka 35 miljoner invånare\n  Ser ut som en gubbe under Kazhakstan.\n  Republik med president men ingen opposition och mycket korruption.\n  Här ligger också Samarkand.\n  Ingen kust.",
-  "Albania": "Huvudstad: Tirana\n Bara 2,5 miljoner invånare.\n Ser ut som en katt bakifrån eller en sjöhäst.\n Lång historia och isolerad språkstam\n Moder Teresa var Alban\n Om man badar badar man i Medelhavet\n",
-  "Gabon": "Huvudstad: Libreville\n Tidigare fransk koloni\n Badar man så badar man i Atlanten\n Ser ganska fyrkantigt ut\n Bara 2,5 miljoner invånare\n Stort som halva Sverige\n Verkar stabilt\n ",
-  "Haiti": "Huvudstad: Port-au-prince\n Ser ut som gubbe som stretchar med lång näsa\n Ligger i Karibien\n Ungefär lika många som i Sverige\n Där bor Haitisnabelslidmus\n ",
-  "Jordan": "Huvudstad: Amman\n Döda havet ligger delvis här och liiiiten kustremsa med indiska oceanen\n Gränsar till Israel, Saudiarabien, Syrien, Irak\n Enligt FN är landet det arabland som har minst dåliga mänskliga rättigheter\n Ser ut som en kvinna i klänning med hår som blåser\n Samma flagga som Palestina fast med en stjärna\n",
-  "Turkmenistan": "Huvudstad: Ashgabat\nSer ut som en sned kvinna som bär något eller har puckelrygg\nDiktator 'for life' som har bytt namn på ordet bröd\nInga kändisar",
-  "Burkina Faso": "Huvudstad: Ouagadougou\n Har tidigare hetat Övre Volta och ligger i västra afrika\n Om man badar så badar man i Volta\n Ingen kust\n Tidigare fransk koloni\n Det oförgängliga folkets land\n Majoriteten muslimer\n Ser ut som en fisk/räka\n",
-  "Armenia": "Huvudstad: Yerevah\nStort folkmord på 1910-talet\nBara kristna\nBerget Ararat ligger där\nVida kunde leva helt okej life\nSer ut som en bucklig, upp och ned vänd gitarr\nNågra kändisar med armenskt påbrå: Kim Kardashian, Cher, Kasparov\n",
-  "Denmark": "Huvudstad: Köpenhamn\nBestår av flera öar: Sjælland är den med Köpenhamn, Fyn är lilla med Odense, Lolland är under Köpenhamn där Vida har släkt och Jylland är den jättestora med Aarhus och Aalborg\nDe har också Grönland och Bornholm och Färöarna\nMonarki med Kung Frederik\nSekulärt men kristet\nGanska rikt land\nKända människor: HC Andersen, Kim Larsen, Mads Mikkelsen, och Jaime Lannister\nVida kunde leva ännu bättre life\nSmørrebrød är känt och gott"
+  "Uzbekistan": {
+    "order": 1,
+    "content": "Huvudstad: Tashkent\n  Cirka 35 miljoner invånare\n  Ser ut som en gubbe under Kazhakstan.\n  Republik med president men ingen opposition och mycket korruption.\n  Här ligger också Samarkand.\n  Ingen kust."
+  },
+  "Albania": {
+    "order": 2,
+    "content": "Huvudstad: Tirana\n Bara 2,5 miljoner invånare.\n Ser ut som en katt bakifrån eller en sjöhäst.\n Lång historia och isolerad språkstam\n Moder Teresa var Alban\n Om man badar badar man i Medelhavet\n"
+  },
+  "Gabon": {
+    "order": 3,
+    "content": "Huvudstad: Libreville\n Tidigare fransk koloni\n Badar man så badar man i Atlanten\n Ser ganska fyrkantigt ut\n Bara 2,5 miljoner invånare\n Stort som halva Sverige\n Verkar stabilt\n "
+  },
+  "Haiti": {
+    "order": 4,
+    "content": "Huvudstad: Port-au-prince\n Ser ut som gubbe som stretchar med lång näsa\n Ligger i Karibien\n Ungefär lika många som i Sverige\n Där bor Haitisnabelslidmus\n "
+  },
+  "Jordan": {
+    "order": 5,
+    "content": "Huvudstad: Amman\n Döda havet ligger delvis här och liiiiten kustremsa med indiska oceanen\n Gränsar till Israel, Saudiarabien, Syrien, Irak\n Enligt FN är landet det arabland som har minst dåliga mänskliga rättigheter\n Ser ut som en kvinna i klänning med hår som blåser\n Samma flagga som Palestina fast med en stjärna\n"
+  },
+  "Turkmenistan": {
+    "order": 6,
+    "content": "Huvudstad: Ashgabat\nSer ut som en sned kvinna som bär något eller har puckelrygg\nDiktator 'for life' som har bytt namn på ordet bröd\nInga kändisar"
+  },
+  "Burkina Faso": {
+    "order": 7,
+    "content": "Huvudstad: Ouagadougou\n Har tidigare hetat Övre Volta och ligger i västra afrika\n Om man badar så badar man i Volta\n Ingen kust\n Tidigare fransk koloni\n Det oförgängliga folkets land\n Majoriteten muslimer\n Ser ut som en fisk/räka\n"
+  },
+  "Armenia": {
+    "order": 8,
+    "content": "Huvudstad: Yerevah\nStort folkmord på 1910-talet\nBara kristna\nBerget Ararat ligger där\nVida kunde leva helt okej life\nSer ut som en bucklig, upp och ned vänd gitarr\nNågra kändisar med armenskt påbrå: Kim Kardashian, Cher, Kasparov\n"
+  },
+  "Denmark": {
+    "order": 9,
+    "content": "Huvudstad: Köpenhamn\nBestår av flera öar: Sjælland är den med Köpenhamn, Fyn är lilla med Odense, Lolland är under Köpenhamn där Vida har släkt och Jylland är den jättestora med Aarhus och Aalborg\nDe har också Grönland och Bornholm och Färöarna\nMonarki med Kung Frederik\nSekulärt men kristet\nGanska rikt land\nKända människor: HC Andersen, Kim Larsen, Mads Mikkelsen, och Jaime Lannister\nVida kunde leva ännu bättre life\nSmørrebrød är känt och gott"
+  },
+  "Bhutan": {
+    "order": 10,
+    "content": "Gränsar till Kina och Indien\nSer ut som en nallebjörn\nHuvudstaden heter Thimphu och saknar flygplats och trafikljus\nBor bara 800 000 i hela landet\nDe flesta lever på jordbruk och uppfödning av Jakar\nVäldigt stängt land\nMajoriteten buddhister\nSjälvständighet från Indien 1949\nValutan heter Ngultrum\n"
+  },
+  "Liberia": {
+    "order": 11,
+    "content": "Huvudstaden heter Monrovia\nGrundades av amerikanska före detta slavar\nHelt okej fungerande demokrati som går åt rätt håll\nTräskmarker och tropisk regnskog\nPygméflodhästar\nMestadels kristna\nLandet ser ut som en kung som ligger på rygg och läser\nHar haft en kvinnlig president\nGränsar till Sierra Leone, Guinea och Elfenbenskusten\n"
+  },
+  "El Salvador": {
+    "order": 12,
+    "content": "Huvudstaden heter San Salvador\nDet ser ut som en knögglig rektangel\nOfficiell valuta är dollar och bitcoin\nLiiiitet men 6,5 miljoner människor bor där\nBara kust mot stilla havet, gränsar mot Guatemala och Honduras\nDe pratar spanska\n"
+  },
+  "Belize": {
+    "order": 13,
+    "content": "Huvudstad: Belmopan\nBor 400 000 människor \nSjälvständigt från England 1981\nGränsar till Guatemala och Mexiko\nHar bara kust till Atlanten\nMycket turism\n"
+  },
+  "Myanmar": {
+    "order": 14,
+    "content": "Huvudstaden heter Naypyidaw\nBråk mellan rohingier och hinduer\nGränsar till Indien, Bangladesh, Kina, Thailand och Kambodja\nHette tidigare Burma\nBurmesiska skriftspråket är fint med många cirklar\n55 miljoner människor\nFlera inbördeskrig och militärkupper på senaste årtionden\n"
+  },
+  "Chad": {
+    "order": 15,
+    "content": "Huvudstaden heter N'Djamena\n200 olika etniska och språkliga grupper\nTidigare fransk koloni\nGränsar till Libyen, Sudan, Centralafrikanska republiken, Kamerun, Nigeria och Niger\nDet finns en antydan till stabilitet\nVida kan inte leva sitt best life\nOm man badar badar man i Tchadsjön\nFlaggan är väääldigt lik Rumäniens\n"
+  },
+  "Finland": {
+    "order": 16,
+    "content": "..."
+  },
+  "Uruguay": {
+    "order": 17,
+    "content": "Ligger i Sydamerika\nGränsar till Brasilien och Argentina\nHuvudstad: Montevideo \nVärldens första fotbolls-vm ägde rum där \nMan badar i Atlanten (det ligger i östra sydamerika)\nSpråk: Spanska\nSer ut som tånageln på Brasiliens stortå\nKristna, majoritet katoliker\nPlatt, Uruguayfloden \nJordbruk \n3,5 miljoner invånare\nValuta är uruguaysk peso\nRepublik, president\n"
+  },
+  "South Africa": {
+    "order": 18,
+    "content": "..."
+  },
+  "Belgium": {
+    "order": 19,
+    "content": "..."
+  },
+  "Rwanda": {
+    "order": 20,
+    "content": "Ligger i östafrika, i södra mitten. Ser ut som en elfantunge.  \nGränsar till Uganda, Kongo Kingshasa, Burundi, Tanzania \nGanska litet men mycket tätbefolkat \nDålig infrastruktur, inte industrialiserats\nHar haft samma president i decennier\nVar koloniserat av Tyskland, efter första världskriget av Belgien \nHuvudstad är Kigali \nMan pratar franska, engelska och kinyarwanda \nFolkmord 1994 på folkgruppen tutsier \nMan exporterar kaffe \nKänd person från Rwanda: Ncuti Gatwa\n"
+  }
 }

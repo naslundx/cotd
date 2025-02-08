@@ -5,7 +5,7 @@ const modalFlag = document.querySelector(".modal-content img");
 const modalContent = document.querySelector(".modal-content p");
 const span = document.getElementsByClassName("close")[0];
 
-let data = {};
+let countryData = {};
 let highlightedCountries = {};
 let unHighlightedCountries = [];
 
@@ -56,12 +56,12 @@ document.querySelector("#go").addEventListener("click", () => {
 
 fetch("data.json")
   .then((response) => response.json())
-  .then((json) => (data = json))
+  .then((json) => (countryData = json))
   .then(() => {
     fetch("world.json")
       .then((response) => response.json())
       .then((worldData) => {
-        highlightedCountries = new Set(Object.keys(data));
+        highlightedCountries = new Set(Object.keys(countryData));
         unHighlightedCountries = worldData.features
           .map((feature) => feature.properties.name)
           .filter((name) => !highlightedCountries.has(name));
@@ -84,8 +84,9 @@ fetch("data.json")
 
             // Click event for displaying country-specific text
             layer.on("click", function () {
-              if (data[name]) {
-                modalContent.innerText = data[name];
+              if (countryData[name]) {
+                const { content, order } = countryData[name];
+                modalContent.innerText = `(${order}: ${name})\n${content}`;
                 modalFlag.src = `https://flagsapi.com/${iso_a2}/flat/64.png`;
                 showModal();
               }
@@ -93,5 +94,5 @@ fetch("data.json")
           },
         }).addTo(map);
       })
-      .catch((error) => console.error("Error loading data:", error));
+      .catch((error) => console.error("Error loading countryData:", error));
   });
