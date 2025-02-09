@@ -2,7 +2,8 @@ const infoBox = document.querySelector("#info");
 const map = L.map("map").setView([20, 0], 2);
 const modal = document.getElementById("myModal");
 const modalFlag = document.querySelector(".modal-content img");
-const modalContent = document.querySelector(".modal-content p");
+const modalWikiLink = document.querySelector(".modal-content p#wiki a")
+const modalContent = document.querySelector(".modal-content p#content");
 const span = document.getElementsByClassName("close")[0];
 
 let countryData = {};
@@ -86,6 +87,7 @@ fetch("data.json")
             layer.on("click", function () {
               if (countryData[name]) {
                 const { content, order } = countryData[name];
+                modalWikiLink.href = `https://en.wikipedia.org/wiki/${name}`;
                 modalContent.innerText = `(${order}: ${name})\n${content}`;
                 modalFlag.src = `https://flagsapi.com/${iso_a2}/flat/64.png`;
                 showModal();
