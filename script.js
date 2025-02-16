@@ -65,18 +65,28 @@ const list = document.querySelector("#list");
 const listContent = document.querySelector("#modal-content-two ul");
 const span = document.getElementsByClassName("close")[0];
 
-const countryData = await fetchJson("data.json");
-const worldData = await fetchJson("world.json");
+const cotdResults = await fetchJson("data.json");
+const mapData = await fetchJson("world.json");
 
-const highlightedCountries = new Set(Object.keys(countryData));
-const unHighlightedCountries = worldData.features
-  .map((feature) => feature.properties.name)
-  .filter((name) => !highlightedCountries.has(name));
+const highlightedCountries = new Set(Object.keys(cotdResults));
 highlightedCountries.forEach((name) => {
-  const { order } = countryData[name];
+  const { order } = cotdResults[name];
   const listItem = document.createElement("li");
   listItem.innerText = `${order}: ${name}`;
   listContent.appendChild(listItem);
+});
+
+const unHighlightedCountries = mapData.features
+  .map((feature) => feature.properties.name)
+  .filter((name) => !highlightedCountries.has(name));
+
+const countriesOfTheWorld = new Set(
+  mapData.features.map((feature) => feature.properties.name),
+);
+Object.keys(cotdResults).forEach((name) => {
+  if (!countriesOfTheWorld.has(name)) {
+    console.log(`Failed to find ${name}`);
+  }
 });
 
 window.onclick = function (event) {
@@ -105,7 +115,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
 }).addTo(map);
 
-L.geoJson(worldData, {
+L.geoJson(mapData, {
   style: (feature) => getStyle(feature.properties.name),
   onEachFeature: (feature, layer) => {
     const { name, iso_a2 } = feature.properties;
@@ -122,8 +132,8 @@ L.geoJson(worldData, {
     });
 
     layer.on("click", function () {
-      if (countryData[name]) {
-        let data = { iso_a2, name, ...countryData[name] };
+      if (cotdResults[name]) {
+        let data = { iso_a2, name, ...cotdResults[name] };
         showModal("one", data);
       }
     });
