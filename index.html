@@ -12,12 +12,20 @@
     </head>
     <body>
         <button id="go">Ny</button>
+        <button id="showlist">Lista</button>
+
         <div id="map"></div>
         <div id="myModal" class="modal">
-            <div class="modal-content">
+            <div id="modal-content-one" class="modal-content invisible">
                 <img src="https://flagsapi.com/BE/flat/64.png" />
                 <p id="wiki"><a href="">Länk till Wikipedia</a></p>
                 <p id="content"></p>
+            </div>
+            <div id="modal-content-two" class="modal-content invisible">
+                <ul></ul>
+            </div>
+            <div id="modal-content-three" class="modal-content invisible">
+                <p></p>
             </div>
         </div>
 
@@ -26,6 +34,6 @@
         </div>
 
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <script src="script.js"></script>
+        <script type="module" src="script.js"></script>
     </body>
 </html>
